@@ -1,0 +1,251 @@
+/* Variables declared here - these are the colors for our pages, as well as the font stacks and sizes. */
+:root {
+    --black: #171321;
+    --dkblue: #0d314b;
+    --plum: #4b0d49;
+    --hotmag: #ff17e4;
+    --magenta: #e310cb;
+    --aqua: #86fbfb;
+    --white: #f7f8fa;
+    --font-size: 1.3rem;
+    --mono: "Oxygen mono", monospace;
+    --sans: Oxygen, sans-serif;
+}
+
+/* Border box model */
+html {
+    box-sizing: border-box;
+}
+* , *::before, *::after {
+    box-sizing: inherit;
+}
+
+
+/* Generic styles for the page */
+body {
+    padding: 0;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-family: var(--sans);
+    background-color: var(--black);
+    color: var(--white);
+    font-size: var(--font-size);
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: var(--magenta);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--hotmag);
+}
+
+/* Intro styles */
+#intro {
+    padding-bottom: 4rem 1rem 10rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#intro p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+#intro .intro__name {
+    font-family: var(--mono);
+}
+
+#intro .intro__name span {
+    font-family: var(--sans);
+    font-size: 4rem;
+    color: var(--aqua);
+    display: block;
+}
+
+#intro h1 {
+    font-size: 2rem;
+}
+
+/*Projects section*/
+.section-project{
+    background-color: var(--dkblue);
+    padding: 4rem 1rem;
+}
+
+
+
+/*Background color divs*/
+.section-plum{
+    border-style: solid;
+    border-image: linear-gradient(to right, var(--magenta) 0%, var(--aqua) 100%) 1;
+    background-color: var(--plum);
+}
+
+.gradient{
+    height: 2px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,23,228,1) 0%, rgba(134,251,251,1) 100%);
+}
+
+/* Contact section */
+#contact {
+    padding: 3rem 0;
+    background-color: var(--plum);
+    margin: 0 auto;
+    color: var(--white);
+    text-align: center;
+    /*border-style: solid;*/
+    /*border-image: linear-gradient(to right, var(--magenta) 0%, var(--aqua) 100%) 1;*/
+    width: auto;
+}
+
+#contact p {
+    font-family: var(--sans);
+}
+
+#contact p:last-child {
+    margin-top: 3rem;
+}
+
+#contact button {
+    border-style: none;
+    border-radius: 5px;
+    padding: 5px;
+    color: var(--white);
+    background-color: var(--hotmag);
+    margin-bottom: 1rem;
+}
+
+/* Navbar */
+nav {
+    font-family: var(--mono);
+    font-size: 80%;
+    padding: 1rem;
+}
+
+nav h1 a {
+    font-family: var(--sans);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+nav li:first-child {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+nav[class*="h1-logo"]{
+    font-size: 150%;
+    color: var(--aqua);
+}
+
+nav h1[class*="h1-logo"]{
+    font-size: 100%;
+    color: var(--aqua);
+}
+
+nav ul li span img {
+    width: 15px;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+}
+
+nav a:hover {
+    color: var(--magenta);
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    
+    gap: 8px; /* Espaçamento entre o ícone e o nome */
+}
+
+.react-logo {
+    width: 20px;
+    height: auto;
+    filter: invert(55%) sepia(100%) saturate(500%) hue-rotate(180deg);
+}
+
+.github-logo{
+    width: 20px;
+    height: auto;
+    filter: invert(55%) sepia(100%) saturate(500%) hue-rotate(180deg);
+}
+
+.linkedin-logo{
+    width: 20px;
+    height: auto;
+    filter: invert(55%) sepia(100%) saturate(500%) hue-rotate(180deg);
+}
+
+.button{
+    background-color: var(--magenta);
+    color: white;
+    padding:0.5rem;
+    border-radius: 5px;
+    font-family: var(--mono);
+    text-decoration: none;
+}
+
+.button:hover{
+    color: var(--white);
+    background-color: var(--hotmag);
+}
+
+@media (min-width: 850px){
+    nav{
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    nav li:first-child{
+        flex-basis: auto;
+        text-align: left;
+        margin-right: auto;
+    }
+}
+
+
+/*Footer content*/
+footer{
+    text-align: center;
+    padding: 4rem 0;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 2rem 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    font-size: 3rem;
+    gap: 3rem;
+}
+
+
+.email-icone{
+    width: 20px;
+    height: auto;
+    filter: invert(55%) sepia(100%) saturate(500%) hue-rotate(180deg);
+}
