@@ -79,6 +79,10 @@ a:hover {
     padding: 4rem 1rem;
 }
 
+.section-project #img-section-hangman{
+    width: 250px;
+}
+
 
 
 /*Background color divs*/
