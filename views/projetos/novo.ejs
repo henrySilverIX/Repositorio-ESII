@@ -1,0 +1,10 @@
+<%- include('../header', { title: title }) %>
+<h1>Cadastrar um novo projeto</h1>
+<form method="POST" action="/projetos/novo">
+  <input name="titulo" placeholder="Título" required><br>
+  <textarea name="descricao" placeholder="Descrição" required></textarea><br>
+  <input name="imagemUrl" placeholder="URL da Imagem"><br>
+  <input name="link" placeholder="Link do projeto" required><br>
+  <button type="submit">Salvar</button>
+</form>
+<%- include('../footer') %>

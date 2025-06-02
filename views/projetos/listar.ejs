@@ -1,0 +1,16 @@
+<%- include('../header', { title: title }) %>
+<h1>Meus Projetos</h1>
+<a href="/projetos/novo">Adicionar Novo Projeto</a>
+<ul>
+  <% projetos.forEach(p => { %>
+    <li>
+      <h2><%= p.titulo %></h2>
+      <p><%= p.descricao %></p>
+      <a href="<%= p.link %>" target="_blank">Ver projeto</a>
+      <form method="POST" action="/projetos/<%= p._id %>/deletar">
+        <button type="submit">Excluir</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>
+<%- include('../footer') %>
