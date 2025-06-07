@@ -1,10 +1,35 @@
 <%- include('../header', { title: title }) %>
+<%- include('../navbar.ejs') %>
 <h1>Cadastrar um novo projeto</h1>
-<form method="POST" action="/projetos/novo">
-  <input name="titulo" placeholder="Título" required><br>
-  <textarea name="descricao" placeholder="Descrição" required></textarea><br>
-  <input name="imagemUrl" placeholder="URL da Imagem"><br>
-  <input name="link" placeholder="Link do projeto" required><br>
-  <button type="submit">Salvar</button>
-</form>
+<section id="formulario">
+  <form method="POST" action="/projetos/novo">
+
+    <!-- Título do projeto -->
+    <label for="titulo">Título do Projeto</label>
+    <input type="text" id="titulo" name="titulo" required><br>
+
+    <!-- Descrição do projeto -->
+    <label for="descricao">Descrição</label>
+    <textarea name="descricao" name="descricao" required></textarea><br>
+
+    <!-- URL da Imagem do projeto -->
+    <label for="imagemUrl">URL da Imagem</label>
+    <input name="imagemUrl" type="text" id="imagmeUrl"><br>
+
+    <!-- Link do projeto -->
+    <label for="link">Link do Projeto</label>
+    <input name="link" type="url" id="link" required><br>
+
+    <!-- Tecnologias usadas pelo projeto -->
+    <label for="tecnologias">Tecnologias (separadas por vírgula)</label>
+    <input name="tecnologias" id="tecnologias" type="text" placeholder="Tecnologias (ex: HTML, CSS, JS)"><br>
+
+    <!-- Ferramentas usadas pelo projeto -->
+    <label for="ferramentas">Ferramentas (separadas por vírgula)</label>
+    <input name="ferramentas" id="tecnologias" type="text" placeholder="Ferramentas (ex: Github, Trello etc)"><br>
+
+    <button class="button" type="submit">Salvar</button>
+
+  </form>
+</section>
 <%- include('../footer') %>

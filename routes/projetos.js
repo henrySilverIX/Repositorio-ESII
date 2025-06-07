@@ -16,9 +16,31 @@ router.get('/novo', (req, res) => {
 
 // Criar um novo projeto
 router.post('/novo', async (req, res) => {
-  const { titulo, descricao, link } = req.body;
-  await Projeto.create({ titulo, descricao, link });
+  let { titulo, descricao, imagemUrl, link, tecnologias, ferramentas } = req.body;
+
+  if (tecnologias) {
+    tecnologias = tecnologias.split(',').map(tech => tech.trim());
+  }
+
+  if (ferramentas) {
+    ferramentas = ferramentas.split(',').map(tech => tech.trim());
+  }
+
+  try{
+  await Projeto.create({ 
+    titulo,
+    descricao,
+    imagemUrl,
+    link,
+    tecnologias,
+    ferramentas
+  });
+
   res.redirect('/projetos');
+  }catch(error){
+    console.error(error);
+    res.send("Erro ao salvar o projeto");
+  }
 });
 
 // Deletar projeto

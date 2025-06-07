@@ -1,14 +1,28 @@
 <%- include('../header', { title: title }) %>
+<%- include('../navbar.ejs') %>
 <h1>Meus Projetos</h1>
 <a href="/projetos/novo">Adicionar Novo Projeto</a>
 <ul>
   <% projetos.forEach(p => { %>
     <li>
       <h2><%= p.titulo %></h2>
+
       <p><%= p.descricao %></p>
-      <a href="<%= p.link %>" target="_blank">Ver projeto</a>
-      <form method="POST" action="/projetos/<%= p._id %>/deletar">
-        <button type="submit">Excluir</button>
+
+      <p>O link para o projeto se encontra <a href="<%= p.link %>" target="_blank">aqui.</a></p>
+
+      <img src="<%= p.imagemUrl %>" alt="Imagem não fornecida" width="150">
+
+      <% if (p.tecnologias && p.tecnologias.length > 0) { %>
+      <p><strong>Tecnologias usadas:</strong> <%= p.tecnologias.join(', ') %></p>
+      <% } %>
+
+      <% if (p.ferramentas && p.ferramentas.length > 0) { %>
+      <p><strong>Ferramentas usadas:</strong> <%= p.ferramentas.join(', ') %></p>
+      <% } %>
+
+      <form class="form-excluir" method="POST" action="/projetos/<%= p._id %>/deletar">
+        <button class="button-excluir" type="submit">Excluir</button>
       </form>
     </li>
   <% }) %>
